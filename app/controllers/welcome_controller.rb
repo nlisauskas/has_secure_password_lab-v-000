@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
+  before_action :require_logged_in
 
   def home
-    @user = User.find_by(session[:user_id])
+    @user = current_user
   end
 
 
